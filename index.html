@@ -164,8 +164,22 @@
     
     <footer>
         <div class="container">
-            <p>© 2024 Daniel Chavez | All Rights Reserved | Last edited: November 24th, 2024</p>
+            <p>© 2024 Daniel Chavez | All Rights Reserved | Last edited: <span id="last-edited"></span></p>
         </div>
     </footer>
+
+    <script>
+        // Get the last modified date of the document
+        const lastModified = new Date(document.lastModified);
+    
+        // Format the date to a readable format (e.g., November 24, 2024)
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = lastModified.toLocaleDateString(undefined, options);
+    
+        // Update the "last-edited" span with the formatted date
+        document.getElementById("last-edited").textContent = formattedDate;
+    </script>
 </body>
+
+
 </html>
