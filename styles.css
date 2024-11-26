@@ -1,46 +1,49 @@
+/* General Settings */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
+    line-height: 1.6;
 }
 
 header {
     background: #4CAF50;
     color: white;
-    padding: 20px 0;
+    padding: 15px 10px; /* Adjusted padding for smaller screens */
 }
 
 .header-container {
-    display: flex; /* Use flexbox to align logo and content */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center the header content horizontally */
-    position: relative; /* Allows precise positioning for the logo */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows content to stack */
+    position: relative;
 }
 
 .logo {
-    width: 115px;
-    height: 115px;
-    border-radius: 50%; /* Makes the image circular */
-    margin-right: 20px; /* Adds space between the logo and text */
-    border: 3px solid white; /* Adds a white border */
-    position: absolute; /* Keeps the logo fixed on the left */
-    left: 20px; /* Positions the logo on the left side */
+    width: 80px; /* Smaller logo for better fit on mobile */
+    height: 80px;
+    border-radius: 50%;
+    margin: 0;
+    border: 3px solid white;
+    position: static; /* Adjusted to stack properly */
 }
 
 .header-content {
-    text-align: center; /* Centers the header text */
-    flex: 1; /* Ensures the text takes up the remaining space */
+    text-align: center;
+    flex: 1;
+    padding: 0 10px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 2em; /* Scaled down slightly for mobile */
 }
 
 header p, header a {
     margin: 5px 0;
-    font-size: 1.2em;
+    font-size: 1em; /* Adjusted for smaller screens */
 }
 
 header a {
@@ -59,6 +62,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Allows wrapping on mobile */
 }
 
 nav ul li {
@@ -106,3 +110,60 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Stack logo and text vertically */
+        align-items: center; /* Center elements on smaller screens */
+    }
+
+    .logo {
+        margin: 10px auto; /* Centers logo */
+    }
+
+    header h1 {
+        font-size: 1.8em; /* Slightly smaller heading */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation links */
+        align-items: center; /* Center links */
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        font-size: 0.9em;
+    }
+
+    main {
+        padding: 15px; /* Reduce padding for better fit */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em; /* Further scale down title */
+    }
+
+    header p, header a {
+        font-size: 0.9em;
+    }
+
+    nav ul li a {
+        font-size: 0.85em;
+        padding: 8px 10px; /* Adjust padding for smaller touch areas */
+    }
+
+    main {
+        padding: 10px; /* Minimal padding for small screens */
+    }
+
+    footer {
+        font-size: 0.9em; /* Adjust footer text for better readability */
+    }
+}
+
